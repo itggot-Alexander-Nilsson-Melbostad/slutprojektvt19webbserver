@@ -1,0 +1,67 @@
+doctype html
+html lang="en" 
+  head
+    meta charset="UTF-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    link href="css/main.css" rel="stylesheet" /
+    title Wilex Fitness AB
+  body
+    header
+      a href="index.html" 
+        img.logo alt=("Wilex Fitness") src="..\\img\\logotyp.png" /
+      a.ptnav href="ptsida.html" 
+      h2
+        | PT
+      a.tranav href="traningssida.html" 
+      h2
+        | Träning
+      a.utenav href="utegym.html" 
+      h2
+        | Utegym
+      a.contactnav href="kontakt.html" 
+      h2
+        | Kontakt
+      button.material-icons onclick="menu()" 
+        h2
+          | Meny
+      .menu.visible
+        ul
+          li.row1
+            a href="ptsida.html"  PT
+          li.row2
+            a href="traningssida.html"  Träning
+          li.row3
+            a href="utegym.html"  Utegym
+          li.row4
+            a href="kontakt.html"  Kontakt
+     == yield %
+    footer
+    
+        | <a href="https://www.instagram.com/alexnilsson7/?hl=en"
+        | <button class="insta"
+        | <img src="..\img\instagram.png" alt=""
+        | </button
+        | </a
+        
+        | <a href="https://m.facebook.com/alexander.nilsson.5437?ref=bookmarks"
+        | <button class="face"
+        | <img src="..\img\facebook.png" alt=""
+        | </button
+        | </a
+        
+        | <a href="https://twitter.com/"
+        | <button class="twitter"
+        | <img src="..\img\twitter.png" alt=""
+        | </button
+        | </a
+      a href="https://www.facebook.com/alexander.nilsson.5437" 
+        i.sprite.sprite-facebook
+      a href="https://www.instagram.com/alexnilsson7/?hl=en" 
+        i.sprite.sprite-instagram
+      a href="https://twitter.com/" 
+        i.sprite.sprite-twitter
+      a.contact href="kontakt.html" 
+        button
+          h2
+            | Kontakta oss
+    script src="./js/menu.js" 
