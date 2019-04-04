@@ -4,6 +4,10 @@ require 'byebug'
 require 'SQlite3'
 require 'BCrypt'
 
+require_relative './functions.rb'
+
+enable :sessions
+
 get("/") do
     slim(:index)
 end
@@ -32,5 +36,19 @@ get("/utegym") do
     slim(:utegym)
 end
 
+get("/new") do
+    slim(:new)
+end
 
+get("/loginfailed") do
+    slim(:loginfailed)
+end
 
+post("/login") do
+    login(params)
+end
+
+post("/logout") do
+    session.destroy
+    redirect("/login")
+end

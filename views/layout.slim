@@ -1,59 +1,65 @@
 doctype html
 html lang="en" 
   head
-    meta charset="UTF-8" /
-    meta content="width=device-width, initial-scale=1.0" name="viewport" /
-    link href="css/main.css" rel="stylesheet" /
+    meta charset="UTF-8" 
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+    link href="/css/main.css" rel="stylesheet" 
     title Wilex Fitness AB
   body
     header
-      a href="index.html" 
-        img.logo alt=("Wilex Fitness") src="..\\img\\logotyp.png" /
-      a.ptnav href="ptsida.html" 
+      form action="/index" method="GET"
+        img.logo alt=("Wilex Fitness") src="..\\img\\logotyp.png"
       h2
         | PT
-      a.tranav href="traningssida.html" 
+      form action="/ptsida" method="GET"
+         button type="Submit" PT
       h2
         | Träning
-      a.utenav href="utegym.html" 
+      form action="/traningssida" method="GET"
+          button type="Submit" Träning  
       h2
         | Utegym
-      a.contactnav href="kontakt.html" 
+      form action="/utegym" method="GET"
+          button type="Submit" Utegym
       h2
         | Kontakt
+      form action="/kontakt" method="GET"
+          button type="Submit" Kontakt
+
       button.material-icons onclick="menu()" 
         h2
           | Meny
       .menu.visible
         ul
           li.row1
-            a href="ptsida.html"  PT
+            form action="/ptsida" method="GET"
+                button type="Submit" PT
           li.row2
-            a href="traningssida.html"  Träning
+             form action="/traningssida" method="GET"
+                button type="Submit" Träning       
           li.row3
-            a href="utegym.html"  Utegym
-          li.row4
-            a href="kontakt.html"  Kontakt
-     == yield %
+            form action="/utegym" method="GET"
+                button type="Submit" Utegym
+          li.row4    
+            form action="/kontakt" method="GET"
+                button type="Submit" Kontakt
+          li.row5 
+            form action="/login" method="GET"
+                button type="Submit" Logga In
+          li.row6 
+            form action="/new" method="GET"
+                button type="Submit" Registrera Användare
+      == yield
     footer
-    
-        | <a href="https://www.instagram.com/alexnilsson7/?hl=en"
-        | <button class="insta"
-        | <img src="..\img\instagram.png" alt=""
-        | </button
-        | </a
-        
-        | <a href="https://m.facebook.com/alexander.nilsson.5437?ref=bookmarks"
-        | <button class="face"
-        | <img src="..\img\facebook.png" alt=""
-        | </button
-        | </a
-        
-        | <a href="https://twitter.com/"
-        | <button class="twitter"
-        | <img src="..\img\twitter.png" alt=""
-        | </button
-        | </a
+      a href="https://www.instagram.com/alexnilsson7/?hl=en"
+        button class="insta"
+          img src="..\img\instagram.png" alt=""
+      a href="https://m.facebook.com/alexander.nilsson.5437?ref=bookmarks"
+        button class="face"
+          img src="..\img\facebook.png" alt=""
+      a href="https://twitter.com/"
+        button class="twitter"
+          img src="..\img\twitter.png" alt=""
       a href="https://www.facebook.com/alexander.nilsson.5437" 
         i.sprite.sprite-facebook
       a href="https://www.instagram.com/alexnilsson7/?hl=en" 
@@ -64,4 +70,4 @@ html lang="en"
         button
           h2
             | Kontakta oss
-    script src="./js/menu.js" 
+  script src="./js/menu.js"
