@@ -1,0 +1,28 @@
+body{
+    background-color: turquoise;
+    text-align: center;
+    position: sticky;
+    height: 200vh;
+    width: 100vW;
+    background-image: image("../img/logotyp.png");
+    display: grid;
+    
+}
+
+header{
+    background-color: black;
+    height: 95px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+   
+}
+
+footer{
+    align-content: bottom;
+    background-color: black;
+    padding-bottom: 0%;
+}
+
+.logo{
+    align-content: left;
+}

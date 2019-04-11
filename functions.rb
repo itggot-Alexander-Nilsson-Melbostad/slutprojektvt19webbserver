@@ -1,6 +1,6 @@
 def login(params)
     state = false
-    db = SQLite3::Database.new("db/blogg.db")
+    db = SQLite3::Database.new("db/db.db")
     db.results_as_hash = true
     result = db.execute("SELECT Username, Password, UserId, Authority, Nickname FROM users WHERE Username = '#{params["Username"]}'")
     if BCrypt::Password.new(result[0]["Password"]) == params["Password"]
@@ -16,7 +16,7 @@ def login(params)
 end
 
 def create(params)
-    db =SQLite3::Database.new("db/blogg.db")
+    db =SQLite3::Database.new("db/db.db")
     db.results_as_hash = true
     new_name = params["Username"] 
     new_password = params["Password1"]

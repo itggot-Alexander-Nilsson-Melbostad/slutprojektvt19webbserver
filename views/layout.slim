@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html lang="en"
+    head
+        meta charset="UTF-8"/
+        meta name="viewport" content="width=device-width, initial-scale=1.0"/
+        meta http-equiv="X-UA-Compatible" content="ie=edge"/
+        link rel="stylesheet" href="css/css.css"
+        link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"
+        title Wilex Fitness
+    header 
+        a.logo href="/index"
+            img src="..\img\logotyp.png" alt="Logotype">
+        a.signin href="/login" 
+            button Sign in
+        a.signup href="/new" 
+            button Sign Up
+        a.kontakt href="/kontakt" 
+            button Kontakt
+        a.pt href="/ptsida" 
+            button Pt Sida
+        a.traning href="/traningssida" 
+            button Träningssida
+        a.utegym href="/utegym" 
+            button Utegym
+    body
+        div.wrapper 
+            ==yield
+    footer  
+         a href="https://www.facebook.com/alexander.nilsson.5437" 
+            img.face src="..\img\facebook.png" alt="Logotype">
+         a href="https://www.instagram.com/alexnilsson7/?hl=en"
+            img.logo src="..\img\instagram.png" alt="Logotype">         
+         a href="https://twitter.com/"
+            img.logo src="..\img\twitter.png" alt="Logotype">
