@@ -52,3 +52,10 @@ post("/logout") do
     session.destroy
     redirect("/login")
 end
+
+post("/create") do
+    create(params)
+end
+
+
+
