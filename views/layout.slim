@@ -8,27 +8,40 @@ html lang="en"
         link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"
         title Wilex Fitness
     header 
-        a.logo href="/index"
-            img src="..\img\logotyp.png" alt="Logotype">
+        a.logo href="/"
+            img src="..\img\logotyp.png" alt="Logotype"
         a.signin href="/login" 
-            button Sign in
+            h2 Sign in
         a.signup href="/new" 
-            button Sign Up
-        a.kontakt href="/kontakt" 
-            button Kontakt
-        a.pt href="/ptsida" 
-            button Pt Sida
-        a.traning href="/traningssida" 
-            button Träningssida
+            h2 Sign Up 
+        a.utegym href="/webshop" 
+            h2 Webshop
+        a.profile href="/profile" 
+            h2 Profile
+        a.traning href="/traning" 
+            h2 Training
         a.utegym href="/utegym" 
-            button Utegym
-    body
+            h2 Outside
+        form action="/review" Method="GET"
+            input.review-link type="submit" value="Review" 
+        form action="/logout" Method="POST"
+            input.logout-link type="submit" value="Sign out" 
+        
+             
+    body 
         div.wrapper 
             ==yield
     footer  
-         a href="https://www.facebook.com/alexander.nilsson.5437" 
-            img.face src="..\img\facebook.png" alt="Logotype">
-         a href="https://www.instagram.com/alexnilsson7/?hl=en"
-            img.logo src="..\img\instagram.png" alt="Logotype">         
-         a href="https://twitter.com/"
-            img.logo src="..\img\twitter.png" alt="Logotype">
+        article.col1    
+            h3 Om Wilex Fitness
+            h4 Wilex Fitness är en av Sveriges största och bästa friskvårdskedjor med 201 gym i Sverige. 
+                |Det ger oss unika möjligheter att ständigt utveckla våra klubbar och att ligga i framkant när 
+                |det gäller utbud, kvalitet, personal och inte minst pris. Hos oss ska alla känna sig hemma – 
+                |det är viktigt för oss!
+
+        a href="https://www.facebook.com/alexander.nilsson.5437" 
+            img.face src="..\img\facebook.png" alt="Logotype"
+        a href="https://www.instagram.com/alexnilsson7/?hl=en"
+            img.insta src="..\img\instagram.png" alt="Logotype"         
+        a href="https://twitter.com/"
+            img.twitter src="..\img\twitter.png" alt="Logotype"

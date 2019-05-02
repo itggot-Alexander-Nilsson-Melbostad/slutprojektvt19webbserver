@@ -1,0 +1,16 @@
+h1 Make a Review on our service!
+
+form action="/makereview" Method="POST"
+    input name="header" type="text" placeholder="Header"
+    input name="text" type="text" placeholder="text"
+    input type="Submit" value="Make an awesome review"
+
+h1 Daily Reviews
+
+- showreview.each do |rev|
+
+    article.dailyreviews
+        P = rev["Username"]
+        h2 = rev["Header"]
+        p = rev["Text"]
+        p = rev["TimeStamp"]

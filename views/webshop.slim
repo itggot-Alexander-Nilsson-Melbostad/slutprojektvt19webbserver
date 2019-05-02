@@ -1,0 +1,37 @@
+h1.title Welcome to Wilex Webshop
+
+
+article.prod 
+    .art 
+    - info.each do |x|
+        h2 Name: #{x['name']}
+        h2 Price: #{x['price']}
+        h2 Product Id: #{x['product_id']}
+        form action="/addtocart" METHOD="POST"
+            input type="hidden" name="product_id" value="#{x['product_id']}"
+            button Buy
+
+
+article.cart
+    h1 Cart
+    .cartlist
+    - show.each do |y|
+        h4 Name: #{y['name']}
+        h4 Price: #{y['price']}
+    - if show.length == 0;
+        p This cart is empty, add products from above!
+        
+
+    form action="/clearcart" method="POST"
+        input type="submit" value="Clear Cart"
+    
+    form action="/create_order" method="POST"
+        input type="submit" Value="Finish order and recieve digital receipt"
+
+    
+     
+    
+    
+    
+
+    

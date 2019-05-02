@@ -8,12 +8,13 @@ require_relative './functions.rb'
 
 enable :sessions
 
+
 get("/") do
     slim(:index)
 end
 
-get("/kontakt") do
-    slim(:kontakt)
+get("/review") do
+    review()
 end
 
 get("/layout") do
@@ -24,12 +25,12 @@ get("/login") do
     slim(:login)
 end 
 
-get("/ptsida") do
-    slim(:ptsida)
+get("/profile") do
+    slim(:profile)
 end
 
-get("/traningssida") do
-    slim(:traningssida)
+get("/traning") do
+    slim(:traning)
 end
 
 get("/utegym") do
@@ -44,16 +45,48 @@ get("/loginfailed") do
     slim(:loginfailed)
 end
 
+get("/checkout") do
+    slim(:checkout)
+end
+
+get("/webshop") do
+    info = product_info(params)
+    show = get_cart(session[:user_id])
+    slim(:webshop, locals:{info: info,show: show})
+end
+
+get("/logout") do
+    slim(:logout)
+end
+
 post("/login") do
     login(params)
 end
 
 post("/logout") do
     session.destroy
-    redirect("/login")
+    redirect("/logout")
 end
 
 post("/create") do
     create(params)
 end
+
+post("/clearcart") do
+    clearcart(params)
+end
+
+post("/makereview") do
+    makereview(params)
+end
+
+post('/addtocart') do
+    addtocart(params[:product_id], session[:user_id])
+    redirect('/webshop')
+end
+
+post('/cart_show_list') do
+    cart_show_list(user_id) 
+end 
+
 
