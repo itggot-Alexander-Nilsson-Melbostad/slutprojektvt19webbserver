@@ -73,7 +73,7 @@ post("/create") do
 end
 
 post("/clearcart") do
-    clearcart(params)
+    clearcart(session[:user_id])
 end
 
 post("/makereview") do

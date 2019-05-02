@@ -35,9 +35,9 @@ def create(params)
     end
 end
 
-def clearcart(params)
+def clearcart(user_id)
     db = database()
-    db.execute("DELETE * FROM carts ")
+    db.execute("DELETE FROM cart WHERE cart.user_id = ?", user_id)
     redirect("/webshop")
 end
 
