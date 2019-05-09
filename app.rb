@@ -8,6 +8,18 @@ require_relative './functions.rb'
 
 enable :sessions
 
+configure do
+    set :unsecured_paths, ['/', '/login', '/new']
+end
+
+before do
+    unless settings.unsecured_paths.include?(request.path)
+        if session[:user_id].nil?
+            redirect('/')
+        end
+    end
+end
+
 
 get("/") do
     slim(:index)
@@ -88,5 +100,13 @@ end
 post('/cart_show_list') do
     cart_show_list(user_id) 
 end 
+
+post('/change_username_route') do
+    change_username(params, session[:user_id])
+end
+
+post('/change_password_route') do
+    change_password(params, session[:user_id])
+end
 
 

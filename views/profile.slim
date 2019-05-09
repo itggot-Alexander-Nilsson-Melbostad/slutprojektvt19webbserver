@@ -1,3 +1,16 @@
 h1 Welcome to your profile page!
 
- 
+h2 Current Username: #{session[:user]}
+
+h2 Input new Username:
+form action="/change_username_route" Method="POST"
+    input.change_username_input type="text" name="change_username" placeholder="Change Your Username"
+
+h2 Current Password: Hidden ya dumbo
+
+h2 Input new password:
+form action="/change_password_route" method="POST"
+    input.change_password_input type="password" name="change_password" placeholder="Change Your Password"
+
+
+
