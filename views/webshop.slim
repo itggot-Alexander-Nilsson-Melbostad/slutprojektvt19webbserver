@@ -7,7 +7,7 @@ article.prod
         h2 Name: #{x['name']}
         h2 Price: #{x['price']}
         h2 Product Id: #{x['product_id']}
-        form action="/addtocart" METHOD="POST"
+        form action="/add_to_cart" METHOD="POST"
             input type="hidden" name="product_id" value="#{x['product_id']}"
             button Buy
 
