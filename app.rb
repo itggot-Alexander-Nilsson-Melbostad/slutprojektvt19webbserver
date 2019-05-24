@@ -9,11 +9,37 @@ enable :sessions
 #Includes the model from model.rb
 include AppModule 
 
-
+helpers do
+    def get_error_login()
+        msg = session[:msg_login_failed].dup
+        session[:msg_login_failed] = nil
+        return msg
+    end
+    def get_error_create()
+        msg = session[:msg_create_failed].dup
+        session[:msg_create_failed] = nil
+        return msg
+    end
+    def get_error_review()
+        msg = session[:msg_review_failed].dup
+        session[:msg_review_failed] = nil
+        return msg
+    end
+    def get_validate_error_login()
+        msg = session[:validate_login_error_msg].dup
+        session[:validate_login_error_msg] = nil
+        return msg
+    end
+    def get_no_info_error_login()
+        msg = session[:no_info_error_msg].dup
+        session[:no_info_error_msg] = nil
+        return msg
+    end 
+end
 
 # Configures the unsecured paths that are locked in the application
 configure do
-    set :unsecured_paths, ['/', '/login', '/new']
+    set :unsecured_paths, ['/', '/login', '/new', '/create']
 end
 
 # Securing the current user to be logged in
@@ -34,7 +60,8 @@ end
 # Selects information about reviews from databse to print
 #
 get("/review") do
-    review()
+    showreview = review()
+    slim(:review, locals:{showreview: showreview})
 end
 
 # Displays static header and footer on all different routes
@@ -45,7 +72,7 @@ end
 
 # Displays login page
 # 
-get("/login") do
+get("/login") do     
     slim(:login)
 end 
 
@@ -105,7 +132,22 @@ end
 #
 #@see Model#login
 post("/login") do
-    login(params)
+    result = login(params)
+    if result[:validate_login_error]
+        session[:validate_login_error_msg] = result[:validate_login_error_msg]
+        redirect back
+    elsif result[:error_login]
+        session[:msg_login_failed] = result[:message_login]
+        redirect back
+    elsif
+        result[:no_info_error]
+        session[:no_info_error_msg] = result[:no_info_error_msg]
+        redirect back
+    else
+        session[:user_id] = result[:user_id]
+        session[:user] = result[:user]
+        redirect('/')
+    end
 end
 
 # Signs out and redirects to '/logout'
@@ -122,7 +164,14 @@ end
 #
 #@see Model#create
 post("/create") do
-    create(params)
+    result = create(params)
+    if result[:error_create]
+        session[:msg_create_failed] = result[:message_create]
+        redirect back
+    else
+        session[:nickname] = result[:nickname]
+        redirect('/')
+    end
 end
 
 # Empties cart based on user id
@@ -132,6 +181,7 @@ end
 #@see Model#clearcart
 post("/clearcart") do
     clearcart(session[:user_id])
+    redirect("/webshop")
 end
 
 # Attempts to create a review
@@ -140,8 +190,14 @@ end
 #
 #@see Model#makereview
 post("/makereview") do
-    makereview(params)
-end
+    result = makereview(params)
+    if result[:error_review]
+        session[:msg_review_failed] = result[:messsage_create]
+        redirect back
+    else
+        redirect("/review")
+    end
+end 
 
 
 # Attempts to add product to cart
@@ -173,6 +229,7 @@ end
 #@see Model#change_username
 post('/change_username_route') do
     change_username(params, session[:user_id])
+    redirect('/profile')
 end
 
 # Attempts to show cart based on user id
@@ -183,6 +240,14 @@ end
 #@see Model#change_password
 post('/change_password_route') do
     change_password(params, session[:user_id])
+    redirect('/profile')
 end
 
+# Error message if requested route is not found     
+#
+# @return slim :failed to database if requirements are matched
+    
+error 404 do 
+    redirect('/failed')
+end 
 

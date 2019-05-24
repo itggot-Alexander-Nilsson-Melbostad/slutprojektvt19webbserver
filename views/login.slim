@@ -1,5 +1,15 @@
     h1 Login
     form action="/login" Method="POST"
+        - if session[:validate_login_error_msg]
+            div.validate_login_error_div 
+                p.error_validate_login = get_validate_error_login()
+        - elsif session[:msg_login_failed]
+            div.login_error_msg_div
+                p.error_login = get_error_login()
+        -else session[:no_info_error_msg]
+            div.no_info_error_div
+                p.no_info_error = get_no_info_error_login()
+        
         input name="username" type="text" placeholder="username"
         input name="password" type="password" placeholder="password"
         input type="Submit" value="Login"

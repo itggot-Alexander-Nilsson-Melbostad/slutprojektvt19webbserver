@@ -6,8 +6,13 @@ html lang="en"
         meta http-equiv="X-UA-Compatible" content="ie=edge"/
         title Create New User
     body
+        
+
         h2 Sign Up    
         form action="/create" method="POST"
+            -if session[:msg_create_failed]
+                div.create_error_msg_div
+                    p.error_create = get_create_error()
             input name="nickname" Placeholder="Insert Nickname/Alias" type="text"
             input name="username" Placeholder="Insert New Name" type="text"
             input name="password1" Placeholder="Insert New Password" type="password"

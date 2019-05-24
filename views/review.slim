@@ -1,10 +1,14 @@
 h1 Make a Review on our service!
 
 form action="/makereview" Method="POST"
+    - if session[:msg_review_failed]
+        div.review_error_msg_div
+            p.error_create_review = get_error_review()
     input name="header" type="text" placeholder="Header"
-    input name="text" type="text" placeholder="text"
+    input name="text" type="text" placeholder="Text"
     input type="Submit" value="Make an awesome review"
 
+   
 h1 Daily Reviews
 
 - showreview.each do |rev|
