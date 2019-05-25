@@ -75,7 +75,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd>AppModule</dd>
+      <dd><span class='object_link'><a href="AppModule.html" title="AppModule (module)">AppModule</a></span></dd>
   </dl>
   
   
@@ -85,6 +85,16 @@
   
 </div>
 
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="AppModule.html" title="AppModule (module)">AppModule</a></span>
+    
+  
+    
+  
+</p>
 
 
 
@@ -550,8 +560,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Attempts to login and redirects to &#39;/index&#39;, else
-&#39;/loginfailed&#39;.</p>
+<p>Attempts to login and redirects to &#39;/index&#39; or back if failedw.</p>
 </div></span>
   
 </li>
@@ -610,6 +619,16 @@
 
 
   
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AppModule.html" title="AppModule (module)">AppModule</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AppModule.html#add_to_cart-instance_method" title="AppModule#add_to_cart (method)">#add_to_cart</a></span>, <span class='object_link'><a href="AppModule.html#cart_show_list-instance_method" title="AppModule#cart_show_list (method)">#cart_show_list</a></span>, <span class='object_link'><a href="AppModule.html#change_password-instance_method" title="AppModule#change_password (method)">#change_password</a></span>, <span class='object_link'><a href="AppModule.html#change_username-instance_method" title="AppModule#change_username (method)">#change_username</a></span>, <span class='object_link'><a href="AppModule.html#clearcart-instance_method" title="AppModule#clearcart (method)">#clearcart</a></span>, <span class='object_link'><a href="AppModule.html#create-instance_method" title="AppModule#create (method)">#create</a></span>, <span class='object_link'><a href="AppModule.html#database-instance_method" title="AppModule#database (method)">#database</a></span>, <span class='object_link'><a href="AppModule.html#get_cart-instance_method" title="AppModule#get_cart (method)">#get_cart</a></span>, <span class='object_link'><a href="AppModule.html#login-instance_method" title="AppModule#login (method)">#login</a></span>, <span class='object_link'><a href="AppModule.html#makereview-instance_method" title="AppModule#makereview (method)">#makereview</a></span>, <span class='object_link'><a href="AppModule.html#product_info-instance_method" title="AppModule#product_info (method)">#product_info</a></span>, <span class='object_link'><a href="AppModule.html#review-instance_method" title="AppModule#review (method)">#review</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_add_to_cart-instance_method" title="AppModule#validate_info_add_to_cart (method)">#validate_info_add_to_cart</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_change_password-instance_method" title="AppModule#validate_info_change_password (method)">#validate_info_change_password</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_change_username-instance_method" title="AppModule#validate_info_change_username (method)">#validate_info_change_username</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_create-instance_method" title="AppModule#validate_info_create (method)">#validate_info_create</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_login-instance_method" title="AppModule#validate_info_login (method)">#validate_info_login</a></span>, <span class='object_link'><a href="AppModule.html#validate_info_makereview-instance_method" title="AppModule#validate_info_makereview (method)">#validate_info_makereview</a></span></p>
+
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -643,12 +662,12 @@
       <pre class="lines">
 
 
-36
-37
-38</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 56</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:index</span><span class='rparen'>)</span>
@@ -686,12 +705,12 @@
       <pre class="lines">
 
 
-90
-91
-92</pre>
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 111</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/checkout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:checkout</span><span class='rparen'>)</span>
@@ -729,12 +748,12 @@
       <pre class="lines">
 
 
-48
-49
-50</pre>
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 69</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/layout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:layout</span><span class='rparen'>)</span>
@@ -772,14 +791,14 @@
       <pre class="lines">
 
 
-54
-55
-56</pre>
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 75</span>
 
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>     
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:login</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -815,12 +834,12 @@
       <pre class="lines">
 
 
-84
-85
-86</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 105</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/loginfailed</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:loginfailed</span><span class='rparen'>)</span>
@@ -858,12 +877,12 @@
       <pre class="lines">
 
 
-104
-105
-106</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 125</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/logout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:logout</span><span class='rparen'>)</span>
@@ -901,12 +920,12 @@
       <pre class="lines">
 
 
-78
-79
-80</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 99</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/new</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:new</span><span class='rparen'>)</span>
@@ -944,12 +963,12 @@
       <pre class="lines">
 
 
-60
-61
-62</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 81</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/profile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:profile</span><span class='rparen'>)</span>
@@ -987,15 +1006,17 @@
       <pre class="lines">
 
 
-42
-43
-44</pre>
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 62</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/review</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_review'>review</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_showreview'>showreview</span> <span class='op'>=</span> <span class='id identifier rubyid_review'><span class='object_link'><a href="AppModule.html#review-instance_method" title="AppModule#review (method)">review</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:review</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>showreview:</span> <span class='id identifier rubyid_showreview'>showreview</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1030,12 +1051,12 @@
       <pre class="lines">
 
 
-66
-67
-68</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 87</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/traning</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:traning</span><span class='rparen'>)</span>
@@ -1073,12 +1094,12 @@
       <pre class="lines">
 
 
-72
-73
-74</pre>
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 93</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/utegym</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:utegym</span><span class='rparen'>)</span>
@@ -1116,18 +1137,18 @@
       <pre class="lines">
 
 
-96
-97
-98
-99
-100</pre>
+117
+118
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 117</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/webshop</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='id identifier rubyid_product_info'>product_info</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_show'>show</span> <span class='op'>=</span> <span class='id identifier rubyid_get_cart'>get_cart</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='id identifier rubyid_product_info'><span class='object_link'><a href="AppModule.html#product_info-instance_method" title="AppModule#product_info (method)">product_info</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_show'>show</span> <span class='op'>=</span> <span class='id identifier rubyid_get_cart'><span class='object_link'><a href="AppModule.html#get_cart-instance_method" title="AppModule#get_cart (method)">get_cart</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:webshop</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>info:</span> <span class='id identifier rubyid_info'>info</span><span class='comma'>,</span><span class='label'>show:</span> <span class='id identifier rubyid_show'>show</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1173,16 +1194,16 @@ href=":user_id">session</a> User identification</p>
       <pre class="lines">
 
 
-166
-167
-168
-169</pre>
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 166</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 209</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/add_to_cart</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_add_to_cart'>add_to_cart</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_add_to_cart'><span class='object_link'><a href="AppModule.html#add_to_cart-instance_method" title="AppModule#add_to_cart (method)">add_to_cart</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/webshop</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1227,15 +1248,15 @@ href=":user_id">session</a> User identification</p>
       <pre class="lines">
 
 
-177
-178
-179</pre>
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 220</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/cart_show_list</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_cart_show_list'>cart_show_list</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span> 
+    <span class='id identifier rubyid_cart_show_list'><span class='object_link'><a href="AppModule.html#cart_show_list-instance_method" title="AppModule#cart_show_list (method)">cart_show_list</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span> 
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1280,15 +1301,17 @@ href=""password"">param</a> New password</p>
       <pre class="lines">
 
 
-197
-198
-199</pre>
+241
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 241</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/change_password_route</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_change_password'>change_password</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_change_password'><span class='object_link'><a href="AppModule.html#change_password-instance_method" title="AppModule#change_password (method)">change_password</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/profile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1333,15 +1356,17 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-187
-188
-189</pre>
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 230</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/change_username_route</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_change_username'>change_username</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_change_username'><span class='object_link'><a href="AppModule.html#change_username-instance_method" title="AppModule#change_username (method)">change_username</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/profile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1385,15 +1410,17 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-146
-147
-148</pre>
+182
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 182</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/clearcart</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_clearcart'>clearcart</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_clearcart'><span class='object_link'><a href="AppModule.html#clearcart-instance_method" title="AppModule#clearcart (method)">clearcart</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/webshop</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1437,15 +1464,29 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-137
-138
-139</pre>
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 166</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/create</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_create'><span class='object_link'><a href="AppModule.html#create-instance_method" title="AppModule#create (method)">create</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:error_create</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:msg_create_failed</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:message_create</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:nickname</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:nickname</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1464,8 +1505,7 @@ href=""username"">param</a> New username</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Attempts to login and redirects to &#39;/index&#39;, else
-&#39;/loginfailed&#39;</p>
+<p>Attempts to login and redirects to &#39;/index&#39; or back if failedw</p>
 
 <p>@<a href="string">param</a> Information from login form</p>
 
@@ -1490,27 +1530,43 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122</pre>
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 134</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_login'>login</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:error</span><span class='rbracket'>]</span>
-        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:msg</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:message</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_login'><span class='object_link'><a href="AppModule.html#login-instance_method" title="AppModule#login (method)">login</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:validate_login_error</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:validate_login_error_msg</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:validate_login_error_msg</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:error_login</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:msg_login_failed</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:message_login</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+    <span class='kw'>elsif</span>
+        <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:no_info_error</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:no_info_error_msg</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:no_info_error_msg</span><span class='rbracket'>]</span>
         <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
     <span class='kw'>else</span>
-        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
         <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -1554,13 +1610,13 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-127
-128
-129
-130</pre>
+156
+157
+158
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 156</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/logout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
@@ -1608,15 +1664,27 @@ href=""username"">param</a> New username</p>
       <pre class="lines">
 
 
-155
-156
-157</pre>
+192
+193
+194
+195
+196
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 155</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 192</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/makereview</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_makereview'>makereview</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_makereview'><span class='object_link'><a href="AppModule.html#makereview-instance_method" title="AppModule#makereview (method)">makereview</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:error_review</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:msg_review_failed</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='symbol'>:messsage_create</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_redirect'>redirect</span> <span class='id identifier rubyid_back'>back</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/review</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1628,7 +1696,7 @@ href=""username"">param</a> New username</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 16 14:17:05 2019 by
+  Generated on Sat May 25 02:00:41 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.19 (ruby-2.4.2).
 </div>

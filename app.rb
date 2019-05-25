@@ -6,8 +6,8 @@ require 'BCrypt'
 require_relative './model.rb'
 enable :sessions
 
-#Includes the model from model.rb
-include AppModule 
+
+include AppModule #Includes the model from model.rb
 
 helpers do
     def get_error_login()
@@ -126,7 +126,7 @@ get("/logout") do
     slim(:logout)
 end
 
-# Attempts to login and redirects to '/index', else '/loginfailed'
+# Attempts to login and redirects to '/index' or back if failedw
 #
 # @param[string] Information from login form
 #
@@ -246,7 +246,6 @@ end
 # Error message if requested route is not found     
 #
 # @return slim :failed to database if requirements are matched
-    
 error 404 do 
     redirect('/failed')
 end 

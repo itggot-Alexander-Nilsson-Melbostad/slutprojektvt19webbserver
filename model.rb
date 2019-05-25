@@ -6,7 +6,7 @@ module AppModule
     # @option param [String] params form for password 
     # @option param [String] params form for nickname
     #
-    # @return Boolean [True] if data matches requirements for information input
+    # @return [Boolean] if data matches requirements for information input
     def validate_info_create(params)
         if params["username"].nil? || params["password1"].nil? || params["password2"].nil? || params["nickname"].nil? || params["password1"] != params["password2"]  
             return false
@@ -17,7 +17,7 @@ module AppModule
     
     # Validates information upon making a review
     #
-    # @param [Hash] Total hash for information about creating a review
+    # @param [Hash] params form for information about creating a review
     # @option params [String] params form for the main content input
     # @option params [String] params form for username 
     # @option params [String] params form for users identification on given review
@@ -34,7 +34,7 @@ module AppModule
     
     # Validates product upon adding a product to the cart
     #
-    # @param :product_id [Integer] the product's id located in database 
+    # @param [Integer] params form for the product's id located in database 
     #
     # @return [Boolean] if the paroduct id exists in database
     def validate_info_add_to_cart(params)
@@ -47,7 +47,7 @@ module AppModule
     
     # Validates information upon changing username
     #
-    # @param [String] The information given in form of changing username 
+    # @param [String] params form for information given in form of changing username 
     #
     # @return [Boolean] if the username input is an actual username and not for example nil
     def validate_info_change_username(params)
@@ -60,7 +60,7 @@ module AppModule
     
     # Validates information upon changing password
     #
-    # @param [String] The information given in form of changing username 
+    # @param [String] params form for information given in form of changing username 
     #
     # @return [Boolean] if the password input is an legitimate password and not for example nil
     def validate_info_change_password(params)
@@ -140,7 +140,7 @@ module AppModule
     
     # Create an account 
     #
-    # @param [Hash] Total information for creating an account
+    # @param [Hash] params form for information for creating an account
     # @option params [String] params form for username         
     # @option params [String] params form for password 
     # @option params [String] params form for nickname on logging in
@@ -150,6 +150,7 @@ module AppModule
     #   * :user_id [Integer] user identification
     #   * :nickname [String] user nickname
     #   * :user [String] user's username
+    #   * :error_create [boolean] state for request, true or false 
     #   * :message_create [String] The given error message when creating an account
     def create(params)
         if validate_info_create(params)
@@ -176,7 +177,7 @@ module AppModule
     
     # Clearing users cart
     #
-    # @param [Integer] Identification linked to currently logged in user     
+    # @param [Integer] user_id as identification linked to currently logged in user     
     #
     # @return [input] to database requirements are matched
     def clearcart(user_id)
@@ -186,7 +187,7 @@ module AppModule
     
     # Obtaining information about the reviews to print them on the app
     #
-    # @param [integer] Identification linked to currently logged in user     
+    # @param [String] for idenfitication linked to currently logged in user     
     #
     # @return [input] to database requirements are matched
     def review()
@@ -197,7 +198,7 @@ module AppModule
     
     # Making a review
     #
-    # @param [Hash] total information when making a review     
+    # @param [Hash] params form for information when making a review     
     # @option params [String] params form for general text in review 
     # @option params [String] params form for header in review 
     # @option params [String] Information saved in database in session about user's username 
@@ -228,7 +229,7 @@ module AppModule
     
     # Obtaining information about the products to print them on the app
     #
-    # @param [String Information from database about products       
+    # @param [String] params form for database about products       
     #
     # @return [input] to database requirements are matched
     def product_info(params)
@@ -238,11 +239,11 @@ module AppModule
     
     # Adding a product to the cart
     #
-    # @param [Hash] Total information about carts based on user id
-    # @option params [integer] User's identification
-    # @option params [Integer] Finding product in database based on product id
+    # @params [integer] user_id as identification
+    # @param [Hash] params form for information about carts based on user id
+    # @option params [Integer] product_id for finding product in database based on product id
     #
-    # @return query [input] to database if requirements are matched
+    # @return [query] to database if requirements are matched
     def add_to_cart(product_id, user_id)
         if validate_info_add_to_cart(params)
             db = database()
@@ -252,9 +253,9 @@ module AppModule
     
     # Gathering information about the carts based on user id
     #
-    # @param [Integer] Allowing to find product id in cart based on currently logged in user     
+    # @param [Integer] user_id form for finding the product id in cart based on currently logged in user     
     #
-    # @return query [input] to database if requirements are matched
+    # @return [query] to database if requirements are matched
     def get_cart(user_id)
         db = database()
         db.execute('SELECT cart.product_id FROM cart WHERE cart.user_id = ?', user_id)
@@ -263,9 +264,9 @@ module AppModule
     
     # Showing information about cart based on user id
     #
-    # @param [Integer] Allowing to find product id in cart based on currently logged in user     
+    # @param [Integer] user_id for finding the product id in cart based on currently logged in user     
     #
-    # @return query [query] to database if requirements are matched
+    # @return [query] to database if requirements are matched
     def cart_show_list(user_id)
         db = database()
         query = <<-SQL 
@@ -280,11 +281,11 @@ module AppModule
     
     # Changing username on currently logged in user
     #
-    # @param [Hash] Total inforamtion about current user and username
-    # @option params [Integer] Allowing to change username on currently logged in user by id    
-    # @option params [String] Information user input from client regarding username 
+    # @param [Hash] params form for inforamtion about current user and username
+    # @option params [Integer] user_id used to change username on currently logged in user by id    
+    # @option params [String] params form for user input from client regarding username 
     #
-    # @return query [input] to database if requirements are matched
+    # @return [input] query to database if requirements are matched
     def change_username(params, user_id) 
         if validate_info_change_username(params)
             db = database()
@@ -294,11 +295,11 @@ module AppModule
     
     # Changing password on currently logged in user
     #
-    # @param [Hash] total amount of information about user id and password
-    # @option params [Integer] Allowing to change password on currently logged in user by id    
+    # @param [Hash] params form for amount of information about user id and password
+    # @option params [Integer] params form for changing password on currently logged in user by id    
     # @option params [String] Information user input from client about new password
     #
-    # @return query [input] to database if requirements are matched
+    # @return [input] query to database if requirements are matched
     def change_password(params, user_id ) 
         if validate_info_change_password(params)
             db = database()
